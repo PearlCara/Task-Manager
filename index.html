@@ -6,29 +6,38 @@
     <title>Task Manager</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
     <div class="flex justify-between items-center top-0 sticky bg-blue-200 p-4"> 
         <h1 class="font-bold text-2xl">Task Manager</h1>
         <div>
+            <button class="item-md" id="calendar">
+                📅
+            </button>
             <span class="material-symbols-outlined">
-                calendar_month
-            </span>
-            <span class="material-symbols-outlined">
-                    search
+                search
             </span>
         </div>
     </div>
-    <div class="max-w-md max-auto">
-        <div class="text-center justify-center flex flex-col mb-4 space-y-2" >
+    <!-- Calendar Modal -->
+    <div id="calendarModal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded shadow-lg">
+            <button id="closeModal" class="text-gray-500 text-xl mb-4 focus:outline-none">&times;</button>
+            <input type="text" id="calendarInput" class="border p-2 rounded w-full" placeholder="Select a date">
+        </div>
+    </div>
+
+    <div class="w-full max-auto justify-center items-center">
+        <div class="text-center justify-center flex flex-col mb-4 space-y-2 items-center" >
             <label class="font-semibold " for="Title">Title:</label> 
             <input class="border p-2"  id="inputTitle" type="text" placeholder="Title">  
 
-            <label class="font-semibold " for="Task">New Task:</label> 
-            <input class="border p-2" id="inputTask" type="text" placeholder="New Task"> 
+            <label class="font-semibold " for="Task">Task description:</label> 
+            <textarea class="border p-2" id="inputTask" type="text" placeholder="Task description" ></textarea> 
 
             <label class="font-semibold " for="Date">Date:</label>
-            <input class="border p-2" id="inputDate" type="text" placeholder="Date">
+            <input class="border p-2" id="inputDate" type="date" placeholder="Date">
 
             <button class="shadow-lg hover:bg-gray-200 p-2 rounded-md font-semibold" id="addTask">Add Task</button>
         </div>
@@ -40,6 +49,7 @@
         </div>
     </div>
     <button id="button" class="shadow-lg hover:bg-gray-200 p-2 rounded-md font-semibold"> </button>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="script.js"></script>
 </body>
 </html>

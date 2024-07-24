@@ -1,5 +1,16 @@
 const buttonAddTask= document.getElementById('addTask');
 
+const calendarIcon = document.getElementById('calendar');
+const calendarModal = document.getElementById('calendarModal');
+calendarIcon.addEventListener('click', () =>{
+    flatpickr(calendarIcon).open();
+})
+
+
+
+
+
+
 buttonAddTask.addEventListener('click',()=>{
     const put= document.getElementById('inputTitle');
     const input= document.getElementById('inputTask');
@@ -14,21 +25,18 @@ buttonAddTask.addEventListener('click',()=>{
     
     const titleSpan = document.createElement('span');
     titleSpan.textContent = `Title: ${titleText}`
-    titleSpan.classList.add('text-xl')
+    // titleSpan.classList.add('text-lg')
 
     const taskSpan = document.createElement('span');
     taskSpan.textContent = `Task: ${taskText}`
     
  
     const dateSpan = document.createElement('span');
-    dateSpan.textContent = `Date: ${dateText}`
-    dateSpan.classList.add('text-sm','text-gray-800')
-
-
+    dateSpan.textContent = `Date: ${new Date(dateText).toLocaleDateString()}`
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox'
-    checkbox.classList.add('m-3', )
+    checkbox.classList.add('m-3')
     checkbox.addEventListener('change', () =>{
         titleSpan.classList.add('line-through')
         taskSpan.classList.add('line-through')
