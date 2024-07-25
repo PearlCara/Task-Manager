@@ -12,10 +12,10 @@
     <div class="flex justify-between items-center top-0 sticky bg-blue-200 p-4"> 
         <h1 class="font-bold text-2xl">Task Manager</h1>
         <div>
-            <button class="item-md" id="calendar">
+            <button class="items-md" id="calendar">
                 📅
             </button>
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined items-md cursor-pointer">
                 search
             </span>
         </div>
@@ -28,27 +28,30 @@
         </div>
     </div>
 
-    <div class="w-full max-auto justify-center items-center">
-        <div class="text-center justify-center flex flex-col mb-4 space-y-2 items-center" >
-            <label class="font-semibold " for="Title">Title:</label> 
-            <input class="border p-2"  id="inputTitle" type="text" placeholder="Title">  
+    <div>
+        <div class="max-w-lg mx-auto p-8">
+            <div class="text-center justify-center flex flex-col mb-4 space-y-2 items-center bg-blue-100" >
+                <label class="font-semibold " for="Title">Title:</label> 
+                <input class="border p-2"  id="inputTitle" type="text" placeholder="Title">  
 
-            <label class="font-semibold " for="Task">Task description:</label> 
-            <textarea class="border p-2" id="inputTask" type="text" placeholder="Task description" ></textarea> 
+                <label class="font-semibold " for="Task">Task description:</label> 
+                <textarea class="border p-2" id="inputTask" type="text" placeholder="Task description" ></textarea> 
 
-            <label class="font-semibold " for="Date">Date:</label>
-            <input class="border p-2" id="inputDate" type="date" placeholder="Date">
+                <label class="font-semibold " for="Date">Date:</label>
+                <input class="border p-2" id="inputDate" type="date" placeholder="Date">
 
-            <button class="shadow-lg hover:bg-gray-200 p-2 rounded-md font-semibold" id="addTask">Add Task</button>
-        </div>
-        <h2 class="font-semibold text-center">Tasks</h2>
-        <div>
+                <label class="font-semibold " for="Date">Image:</label>
+                <input class="border p-2 bg-white shadow-lg font-semibold" id="taskImage" type="file" >
+
+                <button class="shadow-lg hover:bg-gray-300  bg-white p-2 rounded-md font-semibold" id="addTask">Add Task</button>
+            </div>
+            <h2 class="font-semibold text-center text-xl underline">Tasks</h2>
             <ul  id="taskList" class="space-y-4" >
                 
             </ul>  
         </div>
     </div>
-    <button id="button" class="shadow-lg hover:bg-gray-200 p-2 rounded-md font-semibold"> </button>
+    
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="script.js"></script>
 </body>
